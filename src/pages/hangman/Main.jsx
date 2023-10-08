@@ -17,6 +17,8 @@ export default function Main() {
           value={playerName}
           onChange={(e) => setPlayerName(e.target.value)}
         />
+        <p></p>
+        난이도를 선택해 주세요
         <Button buttonContent={"확인"} clickEvent={handleClickEvent} />
       </div>
     </div>
