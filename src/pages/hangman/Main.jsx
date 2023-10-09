@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Button from "../../components/Button/Button";
+import HangmanDropdown from "../../components/HangmanDropdown/HangmanDropdown";
+import HangmanThemeDropdown from "../../components/HangmanDropdown/HangmanThemeDropdown";
 
 export default function Main() {
   const [playerName, setPlayerName] = useState("");
@@ -17,8 +19,12 @@ export default function Main() {
           value={playerName}
           onChange={(e) => setPlayerName(e.target.value)}
         />
-        <p></p>
+        <p />
         난이도를 선택해 주세요
+        <HangmanDropdown />
+        <p />
+        제시어를 선택해 주세요
+        <HangmanThemeDropdown />
         <Button buttonContent={"확인"} clickEvent={handleClickEvent} />
       </div>
     </div>
