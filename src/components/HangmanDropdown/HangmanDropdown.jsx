@@ -5,7 +5,6 @@ export default function HangmanDropdown() {
 
   const onChangeHandler = (e) => {
     setContent(e.target.value);
-    console.log(content);
   };
 
   const Options = [
