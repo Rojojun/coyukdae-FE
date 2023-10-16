@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Button from "../../components/Button/Button";
 import HangmanDropdown from "../../components/HangmanDropdown/HangmanDropdown";
 import HangmanThemeDropdown from "../../components/HangmanDropdown/HangmanThemeDropdown";
+import { SnackbarProvider, useSnackbar } from "notistack";
 import axios from "axios";
 
 const createQuestionApi = async (requestData) => {
@@ -21,7 +22,10 @@ export default function Main() {
   const [selectedLevel, setSelectedLevel] = useState("");
   const [selectedType, setSelectedType] = useState("");
 
+  const { enqueueSnackbar } = useSnackbar();
+
   const handleDropdownChange = (e) => {
+    enqueueSnackbar(`저장되었습니다 환영합니다 ${playerName}`);
     setSelectedLevel(e.target.value);
   };
   const handleClickEvent = () => {
@@ -45,6 +49,7 @@ export default function Main() {
       console.log("API 응답 데이터", response);
     } catch (error) {
       console.error("API 요청 에러 발생", error);
+      enqueueSnackbar(`서버의 응답이 없습니다.`, { variant: error });
     }
   };
 
