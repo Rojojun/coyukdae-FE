@@ -4,7 +4,9 @@ import Cross from "../../components/Hangman/Cross";
 export default function Gameroom() {
   return (
     <div>
-      <Cross isClicked={true} />
+      <div>name</div>
+
+      <Cross />
     </div>
   );
 }

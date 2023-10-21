@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Button from "../../components/Button/Button";
 import HangmanDropdown from "../../components/HangmanDropdown/HangmanDropdown";
 import HangmanThemeDropdown from "../../components/HangmanDropdown/HangmanThemeDropdown";
-import { SnackbarProvider, useSnackbar } from "notistack";
+import { useSnackbar } from "notistack";
 import axios from "axios";
 
 const createQuestionApi = async (requestData) => {
@@ -28,11 +28,7 @@ export default function Main() {
     enqueueSnackbar(`저장되었습니다 환영합니다 ${playerName}`);
     setSelectedLevel(e.target.value);
   };
-  const handleClickEvent = () => {
-    console.log("playName : " + playerName);
-    console.log("selectedLevel : " + selectedLevel);
-    console.log("selectedType : " + selectedType);
-  };
+
   const handleDropDownTypeChange = (e) => {
     setSelectedType(e.target.value);
   };
@@ -75,7 +71,7 @@ export default function Main() {
           selectedType={selectedType}
           onChangeHandler={handleDropDownTypeChange}
         />
-        <Button buttonContent={"확인"} clickEvent={handleCreateQuestion} />
+        <Button buttonContent={"확인"} clickEvent={handleDropdownChange} />
       </div>
     </div>
   );
