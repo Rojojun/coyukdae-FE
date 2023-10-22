@@ -21,11 +21,12 @@ export default function Cross({ isClicked }) {
         margin: "20px 0",
         border: "solid",
         padding: "20px",
-        height: "90vh",
+        height: "25vh",
         borderRadius: "20px",
+        width: "500px",
       }}
     >
-      <div>
+      <div style={{ display: "flex", flexDirection: "row" }}>
         {isShuffleArr.slice(0, 8).map((alphabet, index) => (
           <div
             id={alphabet}
@@ -38,7 +39,7 @@ export default function Cross({ isClicked }) {
         {/* <div>{isShuffleArr.slice(9, 17)}</div>
       <div>{isShuffleArr.slice(18, 26)}</div> */}
       </div>
-      <div>
+      <div style={{ display: "flex", flexDirection: "row" }}>
         {isShuffleArr.slice(9, 17).map((alphabet, index) => (
           <div
             id={alphabet}
@@ -49,7 +50,7 @@ export default function Cross({ isClicked }) {
           </div>
         ))}
       </div>
-      <div>
+      <div style={{ display: "flex", flexDirection: "row" }}>
         {isShuffleArr.slice(18, 26).map((alphabet, index) => (
           <div
             id={alphabet}
