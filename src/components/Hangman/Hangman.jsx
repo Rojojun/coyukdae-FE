@@ -11,6 +11,8 @@ export default function Hangman() {
         borderRadius: "20px",
         width: "200px",
       }}
-    ></div>
+    >
+      <img src="/coyukdae-fe/public/hangman_lv1.png" />
+    </div>
   );
 }
